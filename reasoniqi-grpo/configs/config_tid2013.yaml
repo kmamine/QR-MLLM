@@ -1,0 +1,22 @@
+dataset: TID2013_NR
+bins:
+  min: 0.0
+  max: 9.0
+  step: 0.5
+sigma_source: global  # estimated on train or fixed
+sigma_default: 0.5
+paths:
+  meta_csv: data/processed/tid2013_meta.csv
+  train_csv: data/splits/tid_train.csv
+  val_csv: data/splits/tid_val.csv
+  test_csv: data/splits/tid_test.csv
+train:
+  image_size: 512
+  batch_size: 1
+  micro_batch: 1
+  lr_sft: 1e-4
+  lr_rl: 5e-6
+  epochs_sft: 2
+  steps_rl: 20000
+  g_samples: 4
+  max_reason_tokens: 64

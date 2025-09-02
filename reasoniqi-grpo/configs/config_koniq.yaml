@@ -1,0 +1,21 @@
+dataset: KoniQ-10k
+bins:
+  min: 1.0
+  max: 5.0
+  step: 0.5
+sigma_source: per_image  # use per-image SD from CSV
+paths:
+  meta_csv: data/processed/koniq10k_meta.csv
+  train_csv: data/splits/koniq_train.csv
+  val_csv: data/splits/koniq_val.csv
+  test_csv: data/splits/koniq_test.csv
+train:
+  image_size: 512
+  batch_size: 1
+  micro_batch: 1
+  lr_sft: 1e-4
+  lr_rl: 5e-6
+  epochs_sft: 2
+  steps_rl: 20000
+  g_samples: 4
+  max_reason_tokens: 64
